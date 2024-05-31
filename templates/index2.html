@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loader</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='second.css') }}"
+    />
+    <script>
+      window.addEventListener("load", () => {
+        const loader = document.querySelector(".loader");
+
+        loader.classList.add("loader--hidden");
+
+        loader.addEventListener("transitionend", () => {
+          document.body.removeChild(loader);
+        });
+      });
+
+      function copyText() {
+        var textToCopy = document.getElementById("myText").textContent;
+        navigator.clipboard.writeText(textToCopy);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="loader"></div>
+    <div class="header">
+      <a href="{{ url_for('index')}}"
+        ><img src="{{ url_for('static',filename='new.png') }}" class="logo1"
+      /></a>
+    </div>
+    <div class="display_panel">
+      <div class="copy2">Input File:</div>
+      <div class="copy2">Output Text:</div>
+      <div class="copy2">
+        <img
+          src="{{ url_for('static',filename='src_image/sample.jpg') }}"
+          class="image"
+        />
+      </div>
+      <div class="copy2">
+        <button class="copy" onclick="copyText()">Copy</button>
+        <div class="textdisplay" id="myText">> {{ file_content }}</div>
+      </div>
+    </div>
+    <section class="first">
+      <div>
+        <span>Handwriting: a timeless art. </span>
+        <span>Let us digitize your unique expression.</span>
+      </div>
+      <div class="secimg">
+        <img
+          src="https://t3.ftcdn.net/jpg/02/88/80/38/360_F_288803822_0CJ8L3gr6w6nGnUeje6pCllCX7s986xz.jpg"
+        />
+      </div>
+    </section>
+  </body>
+</html>

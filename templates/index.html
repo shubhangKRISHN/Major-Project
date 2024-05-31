@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paragraph Scanner</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <script>
+      document.getElementById("files").onchange = function () {
+        var src = URL.createObjectURL(this.files[0]);
+        document.getElementById("uploaded-image").src = src;
+      };
+      let input = document.querySelector(".input");
+      let button = document.querySelector(".button");
+      button.disabled = true;
+      input.addEventListener("change", stateHandle);
+
+      function stateHandle() {
+        if (document.querySelector(".input").value === "") {
+          button.disabled = true;
+        } else {
+          button.disabled = false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="main">
+      <nav>
+        <span
+          ><img
+            src="data:image/jpeg;base64,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"
+            width="53"
+            height="700px"
+        /></span>
+      </nav>
+      <div class="box"></div>
+      <div class="hero">
+        <span
+          ><h1>
+            Unlock the power of pen and paper: Where handwriting meets precision
+          </h1></span
+        >
+        <span>Digitalizing World </span>
+        <span
+          >The written word is a powerful tool, now seamlessly bridging the gap
+          between paper and pixels.
+        </span>
+        <div class="hero-button">
+          <div class="form-section">
+            <form action="/" method="POST" enctype="multipart/form-data">
+              <input accept=".jpeg,.jpg" type="file" name="file" id="files" />
+              <a href="secondpage.html">
+                <input type="submit" value="Generate" ,href="index2.html" />
+              </a>
+              
+            </form>
+          </div>
+          <div class="images-section">
+            <img id="uploaded-image" />
+          </div>
+        </div>
+      </div>
+      <div class="separation"></div>
+    </div>
+    <section class="first">
+      <div>
+        <span>Turning your handwritten notes into digital gold.</span>
+        <span>From paper to pixels: Your handwriting, our innovation </span>
+      </div>
+      <div class="secimg">
+        <img
+          src="https://developer.chrome.com/static/docs/web-platform/handwriting-recognition/image/the-core-entities-the-ha-c251fb8361c26.png"
+        />
+      </div>
+    </section>
+    <div class="separation"></div>
+    <section class="first">
+      <div class="secimg">
+        <img
+          src="https://community-cdn-digitalocean-com.global.ssl.fastly.net/84pA8zJ7VukiU58tM1MjXfyu"
+        />
+      </div>
+      <div>
+        <span>Your words, our technology</span>
+        <span>Digitize your handwriting, preserve your legacy.</span>
+      </div>
+    </section>
+    <div class="separation"></div>
+    <section class="first">
+      <div>
+        <span>Digitalize at your pace.</span>
+        <span>Where the art of writing meets the science of recognition.</span>
+      </div>
+      <div class="secimg">
+        <img
+          src="https://cdn.analyticsvidhya.com/wp-content/uploads/2020/09/10-incredible-open-source-computer-vision-projects-for-beginner.jpg"
+        />
+      </div>
+    </section>
+
+    <div class="separation"></div>
+    <section class="first">
+      <div class="secimg">
+        <img
+          src="https://www.xavor.com/wp-content/uploads/2022/10/computer-vision-min-2.jpg"
+        />
+      </div>
+      <div>
+        <span>Ink & Bytes</span>
+        <span>Reviving the art of handwriting in the digital age.</span>
+      </div>
+    </section>
+    <div class="separation"></div>
+    <section class="faq">
+      <span><h2>Frequently Asked Questions</h2></span>
+      <div class="faqbox">
+        What is Handwritten recognition. ?
+        <i class="fa-solid fa-plus"></i>
+      </div>
+      <div class="faqbox">
+        Why digitalizing document is necessary?
+        <i class="fa-solid fa-plus"></i>
+      </div>
+      <div class="faqbox">
+        How does handwritten recognition work?
+        <i class="fa-solid fa-plus"></i>
+      </div>
+      <div class="faqbox">
+        Is handwritten recognition accurate?
+        <i class="fa-solid fa-plus"></i>
+      </div>
+      <div class="faqbox">
+        What are the benefits of using handwritten recognition technology?
+        <i class="fa-solid fa-plus"></i>
+      </div>
+    </section>
+    <div class="separation"></div>
+    <footer>
+      <div class="foot">Questions? <a>Call 000-000-000</a></div>
+      <ul>
+        <li><a>FAQ</a></li>
+        <li><a>Account</a></li>
+        <li><a>Privacy</a></li>
+        <li><a>Only on our site</a></li>
+        <li><a>Help Centre</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

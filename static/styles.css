@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: black;
+}
+.main {
+  background-image: url("https://www.shaip.com/wp-content/uploads/2022/09/Blog_Handwriting-Datasets-to-Train-ML-models.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: max(100vw, 1200px);
+  height: 70vh;
+  position: relative;
+}
+.form-section {
+  margin-bottom: 20px;
+}
+.form-section input[type="file"] {
+  display: flex;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.form-section input[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6e4de6;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.form-section input[type="submit"]:hover {
+  background-color: #4b45a0;
+}
+.images-section {
+  display: none;
+  margin-top: 20px;
+}
+.images-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main .box {
+  height: 70vh;
+  width: 100%;
+  opacity: 0.69;
+  position: absolute;
+  top: 0;
+  background-color: black;
+}
+nav {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 60vw;
+  height: 40px;
+  padding: 8px 0px 0px 8px;
+}
+nav img {
+  width: 89px;
+  height: 24px;
+  position: relative;
+  z-index: 100;
+}
+
+.box {
+  display: flex;
+  position: relative;
+  color: white;
+  z-index: 10;
+  align-items: center;
+  justify-content: center;
+}
+.hero {
+  padding: 10px;
+  padding-bottom: 0;
+  height: 62vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  z-index: 10;
+  gap: 20px;
+}
+span {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.mail {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  background-color: none;
+  border: none;
+  text-align: center;
+  align-items: center;
+}
+.separation {
+  height: 7px;
+  background-color: rgba(64, 59, 59, 0.651);
+  width: 100%;
+}
+.btn {
+  padding: 3px 8px;
+  font-weight: bold;
+  display: inline;
+  position: relative;
+  z-index: 100;
+  font-size: 1rem;
+}
+.btn-red {
+  background-color: red;
+  color: white;
+  padding: 3px 24px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+.main input {
+  padding: 3px 24px;
+  font-size: 20px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: white;
+}
+.btn-red-sm {
+  background-color: red;
+  color: white;
+}
+.hero-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.btn-eng {
+  color: white;
+  font-size: 1rem;
+  background-color: transparent;
+  gap: 10px;
+}
+.first {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 70vw;
+  margin: auto;
+  color: white;
+}
+.secimg {
+  position: relative;
+}
+.secimg img {
+  position: relative;
+  width: 30vw;
+  z-index: 10;
+}
+.secimg video {
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
+.first > div :nth-child(1) {
+  display: flex;
+}
+.first > div :nth-child(1) {
+  font-size: 48px;
+  font-weight: bolder;
+}
+.first > div :nth-child(2) {
+  font-size: 24px;
+}
+.faq {
+  padding: 72px;
+  color: white;
+}
+.faqbox {
+  font-size: 1.3rem;
+  margin-top: 24px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(59, 58, 58, 0.884);
+}
+h3 {
+  text-align: center;
+}
+p {
+  color: white;
+  margin-top: 24px;
+  padding-top: 24px;
+}
+footer {
+  color: white;
+}
+.foot {
+  width: 80vw;
+  margin: 24px;
+}
+ul {
+  text-decoration: underline;
+  margin: 48px;
+  justify-content: space-evenly;
+  align-items: start;
+}
